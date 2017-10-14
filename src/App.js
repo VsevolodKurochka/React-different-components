@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
-import Button from './button/Button';
+import Filter from './Filter/Filter';
 
 class App extends Component {
   render(){
     return(
-      <Button variant="btn-primary" text="Seva create Component" />
+      <Filter source="https://api.myjson.com/bins/196b1d" />
     )
   }
 }

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-//import FilterListGroup from './FilterListGroup';
-//import FilterTab from './FilterTab';
+import FilterListGroup from './FilterListGroup';
+import FilterTab from './FilterTab';
 class FilterItem extends Component {
 	render(){
 		return(
-			<div className="paper" key={this.props.index}>
+			<div className="paper">
 				<div className="row">
 					<div className="col-12 col-sm-6">
 						<img src={this.props.item.image} className="paper-poster" />
@@ -12,10 +12,10 @@ class FilterItem extends Component {
 					<div className="col-12 col-sm-6">
 						<div className="paper-header">
 							<h1 className="paper-title">{this.props.item.name}</h1>
-							<h2 className="paper-subtitle">{(this.props.item.available == "+") ? <span className="text-success">В наличии</span> : <span className="text-danger">Нету в наличии</span>}</h2>
+							<h2 className="paper-subtitle">{(this.props.item.available === "+") ? <span className="text-success">В наличии</span> : <span className="text-danger">Нету в наличии</span>}</h2>
 						</div>
 						
-						{/*<FilterListGroup item={this.props.item}/>*/}
+						<FilterListGroup item={this.props.item} key={"FilterListGroup-" + this.props.index}/>
 						<div className="paper-footer">
 							<p>
 								<span className="paper-price font-weight-bold text-danger text-through">{this.props.item.old_price} грн</span> 
@@ -25,7 +25,7 @@ class FilterItem extends Component {
 						</div>
 					</div>
 				</div>
-				{/*<FilterTab item={this.props.item} increment={this.props.increment} />*/}
+				<FilterTab item={this.props.item} key={"FilterTab-" + this.props.index}/>
 			</div>
 		)
 	}

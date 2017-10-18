@@ -33,7 +33,7 @@ class Filter extends Component{
   	event.preventDefault();
     let collect = [];
     collect = this.state.items.filter(
-    	item => item.hardness == this.state.value
+    	item => item.hardness === this.state.value
     )
     this.setState({
     	sortingItems: collect
@@ -68,10 +68,9 @@ class Filter extends Component{
 						// }else{
 						// 	this.state.items.map((item, i)=>{return this.content(item, i)})
 						// }
-						// this.state.sortingItems.length > 0 ? 
-						// 	this.state.sortingItems.map( (item, i) => <FilterItem item={item} increment={"FilterItemSorting-" + i} />) : 
-						// 	this.state.items.map( (item, i) => <FilterItem item={item} increment={"FilterItem-" + i} />)
-						this.state.items.map( (item, i) => <FilterItem item={item} index={"FilterItem-" + i} />)
+						this.state.sortingItems.length > 0 ? 
+							this.state.sortingItems.map( (item, i) => <FilterItem item={item} key={"FilterItem-" + i} />) : 
+							this.state.items.map( (item, i) => <FilterItem item={item} key={"FilterItem-" + i} />)
 					}
 				</div>
 			</div>

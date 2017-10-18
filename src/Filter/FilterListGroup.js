@@ -35,9 +35,9 @@ class FilterListGroup extends Component{
 		return(
 			<div className="paper-body">
 				<ul className="paper-list list-group list-group-flush">
-					{this.state.list.map((item,i)=>{
+					{this.state.list.map( (item, index) => {
 						return(
-							<li className="list-group-item" key={item.name + i}>
+							<li className="list-group-item" key={"FilterListGroupItem-" + index}>
 								{item.name}: <span className="font-weight-bold">{item.value}</span> {item.afterText ? item.afterText : ''}
 							</li>
 						)
